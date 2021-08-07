@@ -1,8 +1,8 @@
-NAME	= phonebook
+NAME	= braaiinzz
 
-SRCS	= Contact.cpp PhoneBook.cpp
+SRCS	= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
-INC		= PhoneBook.hpp
+INC		= Zombie.hpp
 DEPS	= $(INC)
 OBJS	= $(SRCS:.cpp=.o)
 

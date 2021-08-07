@@ -25,6 +25,7 @@ all:			$(NAME)
 
 #fclean
 clean:
+				$(RM) $(OBJS)
 				$(RM) $(NAME)
 
 #re:				fclean all

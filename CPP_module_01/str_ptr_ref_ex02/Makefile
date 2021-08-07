@@ -1,8 +1,8 @@
-NAME	= phonebook
+NAME	= str_ptr_ref
 
-SRCS	= Contact.cpp PhoneBook.cpp
+SRCS	= main.cpp
 
-INC		= PhoneBook.hpp
+#INC		= Zombie.hpp
 DEPS	= $(INC)
 OBJS	= $(SRCS:.cpp=.o)
 
@@ -10,8 +10,9 @@ CC		= clang++
 RM		= /bin/rm -f
 FLAGS	= -g -Wall -Werror -Wextra
 
+#-include $(INC)
 %.o: %.cpp $(DEPS)
-	$(CC) $(FLAGS) -c $< -include $(INC) -o $(<:.cpp=.o)
+	$(CC) $(FLAGS) -c $< -o $(<:.cpp=.o)
 
 $(NAME):		$(OBJS)
 					$(CC) $(FLAGS) $(OBJS) -o $(NAME)
