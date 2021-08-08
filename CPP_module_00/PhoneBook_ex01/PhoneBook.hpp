@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 00:49:34 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/04 22:46:48 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/08 13:33:28 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
     PhoneBook();
     int     get_user_cmd();
     int     exec_user_cmd();
-    ~PhoneBook() = default;
+    ~PhoneBook();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 10:32:36 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/07 15:16:28 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/08 13:37:25 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ HumanB::HumanB(std::string const& name)
 {
     this->name = name;
 };
+
+HumanB::~HumanB(){};
 
 HumanB::HumanB(std::string const& name, Weapon *weapon)
 {

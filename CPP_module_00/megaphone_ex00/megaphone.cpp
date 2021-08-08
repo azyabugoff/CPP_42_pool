@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:24:08 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/03 19:12:08 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/08 13:32:57 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ private:
 public:
     Megaphone(int n_strs, char **arr_strs);
     void    say_loud();
-    ~Megaphone() = default;
+    ~Megaphone();
 };
 
 Megaphone::Megaphone(int n_strs, char **arr_strs)
@@ -32,7 +32,9 @@ Megaphone::Megaphone(int n_strs, char **arr_strs)
     }
     else
         shy_str = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-}
+};
+
+Megaphone::~Megaphone(){};
 
 void Megaphone::say_loud()
 {

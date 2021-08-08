@@ -6,13 +6,15 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 22:14:05 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/08 01:03:30 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/08 13:36:21 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
 Karen::Karen(){};
+
+Karen::~Karen(){};
 
 void    Karen::debug()
 {

@@ -6,13 +6,15 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:24:08 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/05 02:21:26 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/08 13:34:03 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(){}
+PhoneBook::PhoneBook(){};
+
+PhoneBook::~PhoneBook(){};
 
 int PhoneBook::add()
 {

@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 00:50:33 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/05 01:11:23 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/08 13:34:15 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
     int         fill_contact(int new_cont_flag = 1);
     void        print_contact(int ind) const;
     void        print_contact_info() const;
-    ~Contact() = default;
+    ~Contact();
 };
 
 #endif

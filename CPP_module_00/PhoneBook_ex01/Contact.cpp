@@ -6,13 +6,15 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 01:01:52 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/05 01:11:48 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/08 13:34:26 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::Contact(){};
+
+Contact::~Contact(){};
 
 int Contact::fill_contact(int new_cont_flag)
 {
