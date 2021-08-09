@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 10:31:58 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/08 13:37:07 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/09 10:11:01 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class HumanB
 {
 private:
     std::string name;
-    Weapon      *weapon = NULL;
+    Weapon      *weapon;
 public:
     HumanB(std::string const& name);
     HumanB(std::string const& name, Weapon *weapon);

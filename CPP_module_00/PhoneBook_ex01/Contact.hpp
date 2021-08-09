@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 00:50:33 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/08 13:34:15 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/09 09:43:35 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ private:
     std::string nickname;
     std::string phone_number;
     std::string darkest_secret;
-    int         n_empty = 0;
+    int         n_empty;
 public:
-    int         field_width = 10;
-    int         n_fields = 0;
+    int         field_width;
+    int         n_fields;
     Contact();
     int         fill_contact(int new_cont_flag = 1);
     void        print_contact(int ind) const;

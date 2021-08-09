@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:24:08 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/08 13:34:03 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/09 10:01:12 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(){};
+PhoneBook::PhoneBook()
+{
+    n_filled_contacts = 0;
+    cmd = 0;
+};
 
 PhoneBook::~PhoneBook(){};
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 01:01:52 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/08 13:34:26 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/09 10:02:49 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int Contact::fill_contact(int new_cont_flag)
 {
     n_fields = 0;
     n_empty = 0;
+    field_width = 10;
     if (new_cont_flag)
         std::cout << std::endl << "NEW CONTACT" << std::endl;
 

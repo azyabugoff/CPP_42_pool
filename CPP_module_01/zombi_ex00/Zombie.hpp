@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 19:16:21 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/07 01:01:09 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/09 10:13:24 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Zombie
 {
 private:
-    std::string name = "Unnamed zombie";
+    std::string name;
 public:
     Zombie();
     Zombie(std::string name);

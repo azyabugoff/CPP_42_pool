@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 00:49:34 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/08 13:33:28 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/09 10:03:18 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class PhoneBook
 {
 private:
     Contact contacts[N_CONTACTS];
-    int     n_filled_contacts = 0;
-    int     cmd = 0;
+    int     n_filled_contacts;
+    int     cmd;
     int     add();
     int     search();
 public:
