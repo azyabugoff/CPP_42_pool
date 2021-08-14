@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 13:59:24 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/13 23:45:25 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/14 17:31:23 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Cat &Cat::operator = (const Cat &obj)
     if (this == &obj)
         return (*this);
     type = obj.getType();
-    if (brain != nullptr)
+    if (brain)
         delete brain;
     this->brain = new Brain();
 	for (int i = 0; i < 100; i++)

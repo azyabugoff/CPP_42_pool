@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 18:58:31 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/13 20:44:35 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/14 15:22:27 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Brain::~Brain()
 std::string Brain::getIdea(int ind) const
 {
     if (ind < 0 || ind >= 100)
-		return (nullptr);
+		return (NULL);
     return (ideas[ind]);
 }
 
