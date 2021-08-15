@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/14 17:07:41 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/14 22:09:58 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/15 23:16:28 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # define N_EQUIPMENT 4
 
-# include "ICharacter.hpp"
+//# include "ICharacter.hpp"
+#include <iostream>
+#include "ICharacter.hpp"
 
 class Character : virtual public ICharacter
 {
@@ -30,12 +32,12 @@ public:
 	Character(std::string const &name);
 	Character(const Character &obj);
 	Character &operator = (const Character &obj);
-	~Character();
+	virtual ~Character();
 
-	std::string const & getName() const;
-	void equip(AMateria* m);
-	void unequip(int idx);
-	void use(int idx, ICharacter& target);
+	virtual std::string const & getName() const;
+	virtual void equip(AMateria* m);
+	virtual void unequip(int idx);
+	virtual void use(int idx, ICharacter& target);
 };
 
 #endif

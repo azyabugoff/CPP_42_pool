@@ -3,17 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/14 16:19:57 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/14 22:09:30 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/15 22:16:01 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-# include <string>
+//# include <string>
+//# include "AMateria.hpp"
+# include <iostream>
+class ICharacter;
 # include "AMateria.hpp"
 
 class ICharacter

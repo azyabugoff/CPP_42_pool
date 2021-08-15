@@ -5,7 +5,7 @@ SRCS	= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 DEPS	= 
 OBJS	= $(SRCS:.cpp=.o)
 
-CC		= clang++
+CC		= g++#clang++
 RM		= /bin/rm -f
 FLAGS	= -g -Wall -Werror -Wextra
 
