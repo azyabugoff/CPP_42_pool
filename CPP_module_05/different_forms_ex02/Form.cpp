@@ -6,15 +6,15 @@
 /*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 17:19:11 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/28 21:54:30 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/28 21:57:09 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : name("Unnamed"), gr_to_sign(150), gr_to_exec(150), is_signed(false) {}
+Form::Form() : name("Unnamed"), gr_to_sign(150), gr_to_exec(150), is_signed(false), target("") {}
 
-Form::Form(const std::string name, int gr_to_sign, int gr_to_exec) : name(name), gr_to_sign(gr_to_sign), gr_to_exec(gr_to_exec), is_signed(false)
+Form::Form(const std::string name, int gr_to_sign, int gr_to_exec, std::string target) : name(name), gr_to_sign(gr_to_sign), gr_to_exec(gr_to_exec), is_signed(false), target(target)
 {
 	if (gr_to_sign < 1 || gr_to_exec < 1)
 		throw Form::GradeTooHighException();
@@ -22,7 +22,7 @@ Form::Form(const std::string name, int gr_to_sign, int gr_to_exec) : name(name),
 		throw Form::GradeTooLowException();
 }
 
-Form::Form(const Form &obj) : name(obj.name), gr_to_sign(obj.gr_to_sign), gr_to_exec(obj.gr_to_exec), is_signed(obj.is_signed)
+Form::Form(const Form &obj) : name(obj.name), gr_to_sign(obj.gr_to_sign), gr_to_exec(obj.gr_to_exec), is_signed(obj.is_signed), target(obj.target)
 {
 	if (gr_to_sign < 1 || gr_to_exec < 1)
 		throw Form::GradeTooHighException();
@@ -38,6 +38,7 @@ Form &Form::operator = (const Form &obj)
 		throw Form::GradeTooLowException();
 	if (this == &obj)
 		return (*this);
+	this->target = obj.target;
 	this->is_signed = obj.is_signed;
 	return (*this);
 }
@@ -59,6 +60,8 @@ void Form::beSigned(const Bureaucrat &obj)
 	else
 		this->is_signed = true;
 }
+
+const std::string &Form::getTarget() const { return (this->target); }
 
 const char *Form::GradeTooHighException::what() const throw() { return ("GradeTooHighException (Form)"); }
 

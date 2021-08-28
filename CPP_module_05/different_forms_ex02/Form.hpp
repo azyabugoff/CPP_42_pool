@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 17:14:09 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/28 21:54:27 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/28 21:57:23 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,20 @@ private:
 	const int gr_to_sign;
 	const int gr_to_exec;
 	bool is_signed;
+	std::string target;
 	Form();
 public:
-	Form(const std::string name, int gr_to_sign, int gr_to_exec);
+	Form(const std::string name, int gr_to_sign, int gr_to_exec, std::string target);
 	Form(const Form &obj);
 	Form &operator = (const Form &obj);
-	~Form();
+	virtual ~Form();
 
 	const std::string &getName() const;
 	int getGradeSign() const;
 	int getGradeExec() const;
 	bool getSign() const;
 	void beSigned(const Bureaucrat &obj);
+	const std::string &getTarget() const;
 
 	class GradeTooHighException : public std::exception
 	{
