@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 17:19:11 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/28 21:57:09 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/29 22:32:46 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : name("Unnamed"), gr_to_sign(150), gr_to_exec(150), is_signed(false), target("") {}
+Form::Form() : name("Unnamed"), gr_to_sign(150), gr_to_exec(150), is_signed(false) {}
 
-Form::Form(const std::string name, int gr_to_sign, int gr_to_exec, std::string target) : name(name), gr_to_sign(gr_to_sign), gr_to_exec(gr_to_exec), is_signed(false), target(target)
+Form::Form(const std::string name, int gr_to_sign, int gr_to_exec) : name(name), gr_to_sign(gr_to_sign), gr_to_exec(gr_to_exec), is_signed(false)
 {
 	if (gr_to_sign < 1 || gr_to_exec < 1)
 		throw Form::GradeTooHighException();
@@ -22,7 +22,7 @@ Form::Form(const std::string name, int gr_to_sign, int gr_to_exec, std::string t
 		throw Form::GradeTooLowException();
 }
 
-Form::Form(const Form &obj) : name(obj.name), gr_to_sign(obj.gr_to_sign), gr_to_exec(obj.gr_to_exec), is_signed(obj.is_signed), target(obj.target)
+Form::Form(const Form &obj) : name(obj.name), gr_to_sign(obj.gr_to_sign), gr_to_exec(obj.gr_to_exec), is_signed(obj.is_signed)
 {
 	if (gr_to_sign < 1 || gr_to_exec < 1)
 		throw Form::GradeTooHighException();
@@ -38,7 +38,6 @@ Form &Form::operator = (const Form &obj)
 		throw Form::GradeTooLowException();
 	if (this == &obj)
 		return (*this);
-	this->target = obj.target;
 	this->is_signed = obj.is_signed;
 	return (*this);
 }
@@ -61,11 +60,19 @@ void Form::beSigned(const Bureaucrat &obj)
 		this->is_signed = true;
 }
 
-const std::string &Form::getTarget() const { return (this->target); }
+void Form::execute(Bureaucrat const & executor) const
+{
+	if (this->is_signed == false)
+		throw Form::FormNotSignedException();
+	if (this->getGradeExec() < executor.getGrade())
+		throw Form::GradeTooLowException();
+}
 
 const char *Form::GradeTooHighException::what() const throw() { return ("GradeTooHighException (Form)"); }
 
-const char *Form::GradeTooLowException::what() const throw() { return("GradeTooLowException (Form)"); }
+const char *Form::GradeTooLowException::what() const throw() { return ("GradeTooLowException (Form)"); }
+
+const char *Form::FormNotSignedException::what() const throw() { return ("FormNotSignedException"); }
 
 std::ostream &operator << (std::ostream &out, const Form &obj)
 {

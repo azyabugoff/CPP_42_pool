@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 14:20:57 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/28 21:53:06 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/29 23:58:27 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ public:
 	void increment();
 	void decrement();
 	void signForm(Form &obj);
+	void executeForm(Form const & form);
 
 	class GradeTooHighException : public std::exception
 	{

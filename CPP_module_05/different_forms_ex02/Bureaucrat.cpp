@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 14:22:57 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/28 23:27:54 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/30 00:04:14 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,17 @@ void	Bureaucrat::signForm(Form &obj)
 	else
 		std::cout << this->name << " signs " << obj.getName() << std::endl;
 	obj.beSigned(*this);
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+	if (!form.getSign())
+		std::cout << this->name << " cannot execute " << form.getName() << " because the form is not signed" << std::endl;
+	else if (form.getGradeExec() < this->grade)
+		std::cout << this->name << " cannot execute " << form.getName() << " because it's grade is too low." << std::endl;
+	else
+		std::cout << this->name << " executes " << form.getName() << std::endl;
+	form.execute(*this);
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() { return ("GradeTooHighException (Bureaucrat)"); }

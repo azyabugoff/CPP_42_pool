@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 17:14:09 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/28 21:57:23 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/08/29 22:26:49 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ private:
 	const int gr_to_sign;
 	const int gr_to_exec;
 	bool is_signed;
-	std::string target;
 	Form();
 public:
-	Form(const std::string name, int gr_to_sign, int gr_to_exec, std::string target);
+	Form(const std::string name, int gr_to_sign, int gr_to_exec);
 	Form(const Form &obj);
 	Form &operator = (const Form &obj);
 	virtual ~Form();
@@ -40,7 +39,8 @@ public:
 	int getGradeExec() const;
 	bool getSign() const;
 	void beSigned(const Bureaucrat &obj);
-	const std::string &getTarget() const;
+
+	virtual void execute(Bureaucrat const & executor) const = 0;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -48,6 +48,12 @@ public:
 		const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
+
+	class FormNotSignedException : public std::exception
 	{
 	public:
 		const char *what() const throw();
