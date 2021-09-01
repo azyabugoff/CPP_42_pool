@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 17:07:46 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/07 23:13:03 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/09/01 20:13:55 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void    replace_substrs(std::string &txt, std::string s1, std::string s2)
 {
     int ind = 0;
 
-    (void)s2;
     while ((ind = txt.find(s1, ind)) >= 0)
     {
         txt.erase(ind, s1.length());
