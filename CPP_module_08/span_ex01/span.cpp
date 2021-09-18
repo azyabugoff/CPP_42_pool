@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 23:23:30 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/09/18 21:23:46 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/09/19 00:02:55 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,17 @@ unsigned int Span::shortestSpan() const
 	if (n_added_numbers <= 1)
 		throw Span::NoSpanException();
 	std::vector<int>::const_iterator it;
-	unsigned int shortest_span = static_cast<unsigned int>(vec[1] - vec[0]);
-	unsigned int cur_span = 0;
+	unsigned long shortest_span = static_cast<unsigned long>(vec[1] - vec[0]);
+	unsigned long cur_span = 0;
 	for (it = vec.begin(); it < vec.end() - 1; ++it)
 	{
 		if (it + 1 == vec.end())
 			break ;
-		cur_span = static_cast<unsigned int>(*(it + 1) - *it);
+		cur_span = static_cast<unsigned long>(*(it + 1) - *it);
 		if (cur_span < shortest_span)
 			shortest_span = cur_span;
 	}
-	return (shortest_span);
+	return (static_cast<unsigned int>(shortest_span));
 }
 
 unsigned int Span::longestSpan() const
