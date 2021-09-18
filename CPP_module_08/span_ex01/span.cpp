@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 23:23:30 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/09/12 01:28:41 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/09/18 21:23:46 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 
-span::span() : N(0), n_added_numbers(0) {}
+Span::Span() : N(0), n_added_numbers(0) {}
 
-span::span(const unsigned int &N) : N(N), n_added_numbers(0) {}
+Span::Span(const unsigned int &N) : N(N), n_added_numbers(0) {}
 
-span::span(const span &obj) : N(obj.N), vec(obj.vec) {}
+Span::Span(const Span &obj) : N(obj.N), vec(obj.vec) {}
 
-span &span::operator = (const span &obj)
+Span &Span::operator = (const Span &obj)
 {
 	if (this == &obj)
 		return (*this);
@@ -27,9 +27,9 @@ span &span::operator = (const span &obj)
 	return (*this);
 }
 
-span::~span() {}
+Span::~Span() {}
 
-void span::addNumber(int num)
+void Span::addNumber(int num)
 {
 	if (n_added_numbers < N)
 	{
@@ -38,13 +38,19 @@ void span::addNumber(int num)
 		std::sort(vec.begin(), vec.end());
 	}
 	else
-		throw span::FullSpanException();
+		throw Span::FullSpanException();
 }
 
-unsigned int span::shortestSpan() const
+void Span::addNumber(std::vector<int>::iterator st, std::vector<int>::iterator end)
+{
+	for (std::vector<int>::iterator it = st; it < end; ++it)
+		Span::addNumber(*it);
+}
+
+unsigned int Span::shortestSpan() const
 {
 	if (n_added_numbers <= 1)
-		throw span::NoSpanException();
+		throw Span::NoSpanException();
 	std::vector<int>::const_iterator it;
 	unsigned int shortest_span = static_cast<unsigned int>(vec[1] - vec[0]);
 	unsigned int cur_span = 0;
@@ -59,15 +65,15 @@ unsigned int span::shortestSpan() const
 	return (shortest_span);
 }
 
-unsigned int span::longestSpan() const
+unsigned int Span::longestSpan() const
 {
 	if (n_added_numbers <= 1)
-		throw span::NoSpanException();
+		throw Span::NoSpanException();
 	int min_el = *std::min_element(vec.begin(), vec.end());
 	int max_el = *std::max_element(vec.begin(), vec.end());
 	return (static_cast<unsigned int>(max_el - min_el));
 }
 
-const char *span::FullSpanException::what() const throw() { return ("FullSpanException"); }
+const char *Span::FullSpanException::what() const throw() { return ("FullSpanException"); }
 
-const char *span::NoSpanException::what() const throw() { return ("NoSpanException"); }
+const char *Span::NoSpanException::what() const throw() { return ("NoSpanException"); }
