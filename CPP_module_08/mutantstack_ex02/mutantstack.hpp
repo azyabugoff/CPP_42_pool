@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 21:41:45 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/09/26 22:13:39 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/09/26 22:42:27 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ public:
 	iterator begin() { return (std::stack<T>::c.begin()); }
 	iterator end() { return (std::stack<T>::c.end()); }
 };
-
-# include "mutantstack.cpp"
 
 #endif
