@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:24:08 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/09 10:01:12 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/09/28 18:29:36 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int PhoneBook::get_user_cmd()
 {
     std::string cmd_str;
 
-    std::cout << "ENTER PHONEBOOK COMMAND (\"ADD\", \"SARCH\" or \"EXIT\"):" << std::endl;
+    std::cout << "ENTER PHONEBOOK COMMAND (\"ADD\", \"SEARCH\" or \"EXIT\"):" << std::endl;
     std::getline(std::cin, cmd_str);
     if (cmd_str == "EXIT")
     {
