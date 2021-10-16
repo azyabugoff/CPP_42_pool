@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 19:16:53 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/08/30 14:46:23 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/10/16 17:01:37 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,23 @@ int main(void)
 	Form *tree = new ShrubberyCreationForm("garden");
 	std::cout << *tree << std::endl;
 	tree->beSigned(supervisor);
+	std::cout << "After trying to sign: " << *tree << std::endl;
 	tree->execute(worker);
+
+	std::cout << std::endl << std::endl;
 
 	Form *pres = new PresidentialPardonForm("Worker");
 	std::cout << *pres << std::endl;
 	supervisor.signForm(*pres);
+	std::cout << "After trying to sign: " << *pres << std::endl;
 	pres->execute(supervisor);
+
+	std::cout << std::endl << std::endl;
 
 	Form *robot = new RobotomyRequestForm("Worker");
 	std::cout << *robot << std::endl;
 	robot->beSigned(supervisor);
+	std::cout << "After trying to sign: " << *robot << std::endl;
 	robot->execute(worker);
 	worker.executeForm(*robot);
 
