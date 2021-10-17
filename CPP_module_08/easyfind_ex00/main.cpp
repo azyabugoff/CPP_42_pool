@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 23:12:43 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/09/08 23:12:39 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/10/17 19:07:03 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ int main()
     try { std::cout << *easyfind(vec, num) << std::endl; }
     catch(std::exception &e) { std::cout << num << " not found" << std::endl; }
 
-    vec = {1, 5, 2, 7};
+    vec = {1, 5, 7, 2};
     try { std::cout << *easyfind(vec, num) << std::endl; }
     catch(std::exception &e) { std::cout << num << " not found" << std::endl; }
 
-    num = 2;
+    num = 7;
     try { std::cout << *easyfind(vec, num) << std::endl; }
     catch(std::exception &e) { std::cout << num << " not found" << std::endl; }
 
-    std::list<float> lst = {6, 45, 4};
-    num = 4;
+    std::list<int> lst = {6, 45, 4, 5};
+    num = 12321;
     try { std::cout << *easyfind(lst, num) << std::endl; }
     catch(std::exception &e) { std::cout << num << " not found" << std::endl; }
 }
