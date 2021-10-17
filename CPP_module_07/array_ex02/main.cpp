@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 20:26:38 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/09/03 22:00:13 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/10/17 15:30:05 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int main()
     print_arr(arr3);
     std::cout << std::endl;
     try { std::cout << "arr1[12] = " << arr1[12] << std::endl; }
+    catch(const std::exception& e) { std::cout << e.what() << std::endl; }
+    try { std::cout << "arr1[3] = " << arr1[3] << std::endl; }
     catch(const std::exception& e) { std::cout << e.what() << std::endl; }
     return (0);
 }

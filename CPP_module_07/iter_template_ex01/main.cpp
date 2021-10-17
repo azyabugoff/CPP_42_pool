@@ -6,7 +6,7 @@
 /*   By: sesnowbi <sesnowbi@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 16:22:53 by sesnowbi          #+#    #+#             */
-/*   Updated: 2021/09/03 17:13:31 by sesnowbi         ###   ########.fr       */
+/*   Updated: 2021/10/17 15:17:04 by sesnowbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void print_arr(T arr[], int size)
 
 void increment(int &el) { el += 1; }
 
-void add_braces(std::string &str) { str = "\"" + str + "\""; }
+void add_quotes(std::string &str) { str = "\"" + str + "\""; }
 
 int main()
 {
     int int_arr[] = {1, -2, 3};
-    std::string str_arr[] = {"these", "words", "should", "be", "in", "braces"};
+    std::string str_arr[] = {"these", "words", "should", "be", "in", "quotes"};
 
     std::cout << "int array before: ";
     print_arr(int_arr, 3);
@@ -42,7 +42,7 @@ int main()
 
     std::cout << "string array before: ";
     print_arr(str_arr, 6);
-    ::iter(str_arr, 6, add_braces);
+    ::iter(str_arr, 6, add_quotes);
     std::cout << "string array after: ";
     print_arr(str_arr, 6);
     return (0);
